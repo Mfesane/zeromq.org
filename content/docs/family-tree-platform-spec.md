@@ -17,6 +17,8 @@ weight: 200
 
 The goal is to deliver a secure, end-to-end family tree platform in 12 sprints. The platform includes family management, family visualization, AI financial insights, geographic intelligence, time capsule messaging, live event automation, memorial pages, automated reporting, and enterprise security. Teams are staffed with 8 developers, 2 testers, a data scientist, a business analyst, a cyber security analyst, a graphics designer, a scrum master, a project manager, a product owner, and 50 user agents for validation and load realism.
 
+This specification assumes the product is already approximately 70 percent complete. Delivery focuses on a smooth continuation: gap closure, integration, hardening, and release readiness without restarting the existing build.
+
 ## Goals and success criteria
 
 ### Product goals
@@ -31,6 +33,20 @@ The goal is to deliver a secure, end-to-end family tree platform in 12 sprints. 
 - Ship in 12 sprints with measurable outcomes per sprint.
 - Maintain end-to-end flow quality on every release.
 - Scale to at least 50 concurrent user agents in staging.
+
+## Current state and continuation principles
+
+### Current state assumption
+
+- The product is roughly 70 percent complete with core foundations already in place.
+- Existing architecture and data models are preserved unless a critical issue is found.
+
+### Continuation principles
+
+- No restart: build on the current baseline and avoid re-implementing completed features.
+- Compatibility first: breaking changes require migration plans and stakeholder sign-off.
+- Incremental delivery: ship improvements behind feature flags and validate progressively.
+- Traceability: map existing epics to the remaining sprint outcomes.
 
 ## Scope and priorities
 
@@ -273,16 +289,16 @@ The goal is to deliver a secure, end-to-end family tree platform in 12 sprints. 
 
 | Sprint | Focus | Key outcomes |
 | --- | --- | --- |
-| 1 | Discovery and architecture | Data model, UX research, backlog, ADRs |
-| 2 | Core identity and access | Auth, RBAC baseline, tenant model |
-| 3 | Family management MVP | Family CRUD, invites, role flows |
-| 4 | Visualization MVP | Tree view, timeline, export baseline |
-| 5 | Geographic intelligence MVP | Location tagging, map view |
-| 6 | Time capsule MVP | Scheduling, encryption, audit |
-| 7 | Live event automation MVP | Templates, invites, RSVPs |
-| 8 | Memorial pages MVP | Tribute pages, moderation |
-| 9 | AI financial insights MVP | Explainable insights, opt-in data |
-| 10 | Automated reporting MVP | Scheduled reports, exports |
+| 1 | Baseline stabilization | Existing feature audit, gap analysis, updated backlog |
+| 2 | Core identity hardening | Auth, RBAC, tenant model validation |
+| 3 | Family management completion | Merge workflow, history, invite reliability |
+| 4 | Visualization completion | Tree view performance, export reliability |
+| 5 | Geographic intelligence completion | Location tagging, map view accuracy |
+| 6 | Time capsule completion | Scheduling, encryption, audit validation |
+| 7 | Live event automation completion | Templates, invites, RSVPs |
+| 8 | Memorial pages completion | Tribute pages, moderation |
+| 9 | AI financial insights completion | Explainable insights, opt-in data |
+| 10 | Automated reporting completion | Scheduled reports, exports |
 | 11 | Enterprise security hardening | SSO, audit logs, retention |
 | 12 | Launch readiness | UAT, compliance, reliability |
 
@@ -309,6 +325,7 @@ The goal is to deliver a secure, end-to-end family tree platform in 12 sprints. 
 - Risk: Data quality issues reduce insight trust. Mitigation: data validation and explainability requirements.
 - Risk: Graph performance degrades at scale. Mitigation: load testing and caching plan by Sprint 6.
 - Risk: Security compliance gaps. Mitigation: threat modeling and security gates in every sprint.
+- Risk: Rework due to unclear current-state baseline. Mitigation: Sprint 1 gap analysis with system inventory.
 
 ## Open questions
 
